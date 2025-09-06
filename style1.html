@@ -1,76 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 25px;
+  }
 
-<div id="header">
-</div>
+  header {
+    background: mediumseagreen;
+    color: white;
+    padding: 6px;
+  }
+
+  .container {
+    display: inline-flex;
+  }
+
+  nav.menu {
+    width: 200px;
+    padding: 10px;
+  }
+
+  nav.menu ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  nav.menu li {
+    margin: 5px 0;
+  }
+
+  nav.menu a {
+    display: block;
+    background: #f1f1f1;
+    padding: 10px;
+    border: 1px solid #aaa;
+    text-decoration: none;
+    color: black;
+    border-radius: 4px;
+  }
+
+  nav.menu a:hover {
+    background: #eee;
+  }
+
+  nav.menu a:active,
+  nav.menu a:focus {
+    background: rgb(60, 179, 161);
+    color: white;
+  }
+
+  main {
+    flex: 1;
+    padding: 10px;
+
+  }
+
+  aside {
+    width: 170px;
+    background: deepskyblue;
+    color: white;
+    padding: 20px;
+  }
+
+
+  #bottom {
+    width: 98%;
+    border: 1px solid black;
+    border-radius: 4px;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    font-size: 70%;
+    line-height: 14px;
+    background: #f1f1f1;
+    margin-top: 20px;
+  }
+</style>
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: white;
-      margin: 0;
-      padding: 0;
-      display: 0;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+  <title>Same Page Different Stylesheets</title>
 
-    h1 {
-      color: #2c3e50;
-      font-size: 28px;
-      font-weight: bold;
-      margin-bottom: 10px;
-      text-align: left;
-    }
-
-    .container {
-      background-color: white;
-      border: 2px solid #ccc
-    }
-  </style>
+  <link rel="stylesheet" href="style1.css" title="Stylesheet 1">
+  <link rel="alternate stylesheet" href="style2.css" title="Stylesheet 2">
+  <link rel="alternate stylesheet" href="style3.css" title="Stylesheet 3">
+  <link rel="alternate stylesheet" href="style4.css" title="Stylesheet 4">
+  <link rel="alternate stylesheet" href="nostyle.css" title="No Stylesheet">
 </head>
 
+<body>
+  <header>
+    <h1>Welcome to Hyuckbin's Homepage</h1>
+    <p>Use the menu to select different Stylesheets</p>
+  </header>
 
-<a>
-  <h1>Welcome to Hyuckbin's Homepage</h1>
-  Use the menu to select different Stylesheets
-  <ul>
-    <li>Stylesheet 1</li>
-    <li>Stylesheet 2</li>
-    <li>Stylesheet 3</li>
-    <li>Stylesheet 4</li>
-    <li>No Stylesheet</li>
-  </ul>
-  <h1>Same Page Different Stylesheets</h1>
-  This is a demonstration of how different stylesheets can change the layout of your HTML page. You can change the
-  layout of this page by selecting different stylesheets in the menu, or by selecting one of the following links:
-  <br>
-  <a href="www">Stylesheet1, Stylesheet2, Stylesheet3, Stylesheet4.</a>
+  <div class="container">
+    <nav class="menu">
+      <ul>
+        <li><a href="style1.css" onclick="setActiveStyleSheet('Stylesheet 1'); return false;">Stylesheet 1</a></li>
+        <li><a href="style2.css" onclick="setActiveStyleSheet('Stylesheet 2'); return false;">Stylesheet 2</a></li>
+        <li><a href="http://127.0.0.1:5500/style2.html">Stylesheet 3</a></li>
+        <li><a href="style4.css" onclick="setActiveStyleSheet('Stylesheet 4'); return false;">Stylesheet 4</a></li>
+        <li><a href="http://127.0.0.1:5500/nostyle.html" >No Stylesheet</a></li>
 
-  </p>
+      </ul>
+    </nav>
+    <main>
+      <h1>Same Page Different Stylesheets</h1>
+      <p>
+        This is a demonstration of how different stylesheets can change the layout of your HTML page. You can change the
+        layout of this page by selecting different stylesheets in the menu, or by selecting one of the following links:<br>
+        <a href="#" onclick="setActiveStyleSheet('Stylesheet 1'); return false;">Stylesheet1</a>,
+        <a href="#" onclick="setActiveStyleSheet('Stylesheet 2'); return false;">Stylesheet2</a>,
+        <a href="http://127.0.0.1:5500/style2.html" >Stylesheet3</a>,
+        <a href="#" onclick="setActiveStyleSheet('Stylesheet 4'); return false;">Stylesheet4</a>.
+      </p>
 
+      <h2>No Styles</h2>
+      <p>
+        This page uses DIV elements to group different sections of the HTML page. Click here to see how the page looks
+        like with no stylesheet:<br>
+        <a href="http://127.0.0.1:5500/nostyle.html" >No Stylesheet</a>.
+      </p>
 
-  <h2>No Styles</h2>
-  This page uses DIV elements to group different sections of the HTML page. Click here to see how the page looks like
-  with no stylesheet:
-  <br><a href="www">No Stylesheet.</a>
+    </main>
 
-  <h3>Side-Bar</h3>
-  <p>
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-    magna aliquam erat volutpat.
-  </p>
+    <aside>
+      <h3>Side-Bar</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+        tincidunt ut laoreet dolore magna aliquam erat volutpat.
+      </p>
 
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-  magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
-  nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-  consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit
-  praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-  </body>
+    </aside>
+  </div>
+
+  <div id="bottom">
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+    dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+    suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in
+    vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et
+    iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+  </div>
+
+  <script>
+    function setActiveStyleSheet(title) {
+      var i, a, main;
+      for (i = 0; (a = document.getElementsByTagName("link")[i]); i++) {
+        if (a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("title")) {
+          a.disabled = true;
+          if (a.getAttribute("title") == title) a.disabled = false;
+        }
+      }
+    }
+  </script>
+</body>
 
 </html>
