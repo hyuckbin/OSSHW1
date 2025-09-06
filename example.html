@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {}
+
+    .box {
+      border: solid rgb(244, 242, 242);
+      background-color: rgb(238, 232, 232);
+      margin: 20px;
+      height: 350px;
+      text-align: center;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .box2{
+      border: solid purple;
+      background-color: purple;
+      width: 45px;
+      height: 45px;
+
+      text-align: center;
+      color: white ;
+      font-size: 35px;
+
+    }
+
+    .button-container {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .button {
+      width: 180px;
+      height: 45px;
+      border-radius: 40%;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .primary {
+      background-color: blue;
+      color: white;
+      border: solid;
+    }
+
+    .secondary {
+      background-color: white;
+      color: gray;
+      border: solid black;
+    }
+
+    .red {
+      color: rgb(145, 17, 38);
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="box2"> B</div>
+    <h1>Jumbotron with icon</h1>
+    This is a custom jumbotron featuring an SVG image at the top, some longer text that<br>
+    wraps early thanks to a responsive <span class="red">.col-*</span> class, and a customized call to action.
+
+    <div class="button-container">
+      <div class="button primary">Call to action -></div>
+      <div class="button secondary">Secondary link</div>
+    </div>
+  </div>
+
+  <div class="box">
+    <h1>Placeholder jumbotron</h1>
+    This faded back jumbotron is useful for placeholder content. It's also a great way<br>
+    to add a bit of context to a page or section when no content is available and to encourage visitors to<br>
+    take a specific action.
+    <div class="button-container">
+      <div class="button primary">Call to action</div>
+    </div>
+  </div>
+  <div class="box">
+    <h1>Full-width jumbotron</h1>
+    This takes the basic jumbotron above and makes its background edge-to-edge with a <span
+      class="red">.container</span> 
+    inside to align content. Similar to above, it's been recreated with built-in grid and utility classes.
+  </div>
+
+  <div class="box">
+    <h1>Basic jumbotron</h1>
+    This is a simple Bootstrap jumbotron that sits within a <span class="red">.container</span>, recreated with built-in
+    utility classes.
+  </div>
+</body>
+
+</html>
